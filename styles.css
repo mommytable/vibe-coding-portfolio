@@ -97,7 +97,7 @@ nav {
 
 .hero-image {
     position: relative;
-    background: url('hero-image.jpg') no-repeat center;
+    background: url('images/hero-image.jpg') no-repeat center;
     background-size: cover;
     min-height: 400px;
 }
@@ -359,8 +359,51 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* MovieFlix poster with 50% saturation */
+.work-item.movieflix .work-image {
+    background-image: url('images/movie-poster.jpg');
+    filter: saturate(50%);
+    /* place image under subtitle and center it */
+    position: static;
+    width: 90%;
+    height: 200px;
+    margin: 1rem auto 0;
+    background-position: center;
+    background-size: cover;
+}
+
 .work-item:hover .work-image {
     transform: translateY(-10px);
+}
+
+/* Link styling for work items */
+.work-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.work-item h3 {
+    position: relative;
+}
+
+.work-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: width 0.3s ease;
+}
+
+.work-item:hover h3::after {
+    width: 100%;
 }
 
 /* Mobile Responsiveness */
